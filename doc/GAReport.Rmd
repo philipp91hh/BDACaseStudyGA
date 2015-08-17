@@ -64,8 +64,8 @@ ggplot(entrpmonth, aes(x = month,y = entrances)) + geom_line() +
 And its evolution year by year
 
 ```{r, echo=FALSE, message=FALSE, prompt=FALSE, results='asis'}
-entrpyear <-  group_by(gadata, factor(year)) %>% summarise(entrances = sum(entrances))
-ggplot(entrpmonthyear,aes(x = year, y = entrances)) + geom_bar(stat="identity", fill = "lightblue", colour = "black")
+entrpyear <-  group_by(gadata, year) %>% summarise(entrances = sum(entrances))
+ggplot(entrpyear,aes(x = year, y = entrances)) + geom_bar(stat="identity", fill = "lightblue", colour = "black")
   
 ```
 
